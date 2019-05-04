@@ -1,7 +1,7 @@
 import argparse
-import logging
 import sys
-import 
+from termcolor import colored
+import utils.domainsearch
 
 
 def run(args):
@@ -19,5 +19,5 @@ if __name__ == '__main__':
     try:
         run(args)
     except KeyboardInterrupt:
-        logging.info("Ctrl C - Stopping Client")
+        print(colored("Ctrl C - Stopping Client","red"))
         sys.exit(1)

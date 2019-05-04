@@ -1,6 +1,20 @@
 import sys
 import random
 
+# Slack webhooks for notifications
+posting_webhook = "https://hooks.slack.com/services/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"
+errorlogging_webhook = "https://hooks.slack.com/services/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"
+test_webhook = "https://hooks.slack.com/services/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"
+slack_sleep_enabled = True  # bypass Slack rate limit when using free workplace, switch to False if you're using Pro/Ent version.
+at_channel_enabled = True   # Add @channel notifications to Slack messages, switch to False if you don't want to use @channel
+
+# crtsh postgres credentials, please leave it unchanged.
+DB_HOST = 'crt.sh'
+DB_NAME = 'certwatch'
+DB_USER = 'guest'
+DB_PASSWORD = ''
+
+
 # SSL证书验证 (SSL certificate verification)
 allow_ssl_verify = True
 
