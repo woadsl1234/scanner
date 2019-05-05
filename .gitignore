@@ -1,3 +1,5 @@
 *.bak
 *.pyc
 */.DS_Store
+将删除 lib/__pycache__/
+将删除 output/

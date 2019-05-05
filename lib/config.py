@@ -1,5 +1,9 @@
+# -*- coding:utf-8 -*-
 import sys
 import random
+
+VERSION = '0.0.1'
+AUTHOR = 'ckj123'
 
 # Slack webhooks for notifications
 posting_webhook = "https://hooks.slack.com/services/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"
@@ -93,3 +97,48 @@ headers = {
 
 # nmap命令设置 （Nmap command settings）
 nmap_cmd_line = ""
+
+
+banner_0 = """\033[01;34m
+ _____________________________
+< Version:%s by %s >
+ -----------------------------\033[0m
+     \033[01;31m\\
+      \033[01;33m\\\033[0m
+          oO)-.                       .-(Oo
+         /__  _\                     /_  __\\
+         \  \(  |     ()~()         |  )/  /
+          \__|\ |    (-___-)        | /|__/
+          '  '--'    ==`-'==        '--'  '
+
+""" % (VERSION, AUTHOR)
+
+banner_1 = """\033[01;34m
+ _____________________________
+< Version:%s by %s >
+ -----------------------------\033[0m
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\\
+                ||----w |
+                ||     ||
+
+""" % (VERSION, AUTHOR)
+
+banner_2 = """\033[01;34m
+_____________________________
+< Version:%s by %s >
+-----------------------------\033[0m
+  \033[01;31m\\
+    \033[01;33m\\\033[0m
+      .--.
+     |o_o |
+     |:_/ |
+    //   \ \\
+   (|     | )
+   /'\_   _/`\\
+   \___)=(___/
+
+""" % (VERSION, AUTHOR)
+
+banners = [banner_0, banner_1, banner_2]

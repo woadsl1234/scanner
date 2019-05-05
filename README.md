@@ -1,2 +1,8 @@
 # scanner
-将新的子域名发送到sublert
+
+
+
+# 3x
+sublert
+wydomain
+POC-T
