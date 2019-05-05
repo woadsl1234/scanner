@@ -5,8 +5,8 @@ class CUSTOM_LOGGING:
     SYSINFO = 9
     SUCCESS = 8
     ERROR = 7
-    WARNING = 6
     DEBUG = 5
+    WARNING = 6
 
 class EXIT_STATUS:
     SYSETM_EXIT = 0

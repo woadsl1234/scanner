@@ -1,12 +1,11 @@
-import dns.resolver
 from termcolor import colored
-from lib.config import *
+from lib.core.config import *
 from tld import get_fld
 import time
 import json
 import requests
 import os
-from lib.core.log import MY_LOGGER
+from lib.core.data import *
 
 def at_channel(): #control slack @channel
     return("<!channel> " if at_channel_enabled else "")
@@ -21,7 +20,7 @@ def slack(data): #posting to Slack
                             )
     if response.status_code != 200:
         error = "Request to slack returned an error {}, the response is:\n{}".format(response.status_code, response.text)
-        MY_LOGGER.error(error)
+        logger.error(error)
     if slack_sleep_enabled:
         time.sleep(1)
 
