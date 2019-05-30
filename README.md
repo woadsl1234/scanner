@@ -4,5 +4,4 @@
 
 # 3x
 sublert
-wydomain
-POC-T
+subdomain
