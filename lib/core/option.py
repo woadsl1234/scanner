@@ -19,6 +19,9 @@ def init():
 
 def _initconf():
     conf.mutiurl = []
+    with open('../../dics/domain/domain.txt') as f:
+        conf.sub = f.readlines()
+    conf.process = 5
 
 def pluginScan(args):
     pass
