@@ -1,5 +1,6 @@
 from lib.core.log import MY_LOGGER
 from lib.core.data import conf
+from lib.subdomain.subdomain import subdomain
 import os,sys
 
 def Options(args):
@@ -10,8 +11,8 @@ def Options(args):
 
     if conf.domain:
         MY_LOGGER.info("start domain search")
-        # subdomain()
-        pass
+        subdomain(args.domain, conf.process, args.domains).run()
+
     sys.exit(0)
 
 def init():
@@ -19,9 +20,7 @@ def init():
 
 def _initconf():
     conf.mutiurl = []
-    with open('../../dics/domain/domain.txt') as f:
-        conf.sub = f.readlines()
-    conf.process = 5
+    conf.process = 20
 
 def pluginScan(args):
     pass

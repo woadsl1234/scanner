@@ -1,35 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# project = https://github.com/Xyntax/POC-T
-# author = i@cdxy.me
 
 import logging
 import sys
 from lib.core.enums import CUSTOM_LOGGING
 
-logging.addLevelName(CUSTOM_LOGGING.SYSINFO, "*")
-logging.addLevelName(CUSTOM_LOGGING.SUCCESS, "+")
-logging.addLevelName(CUSTOM_LOGGING.ERROR, "-")
-logging.addLevelName(CUSTOM_LOGGING.WARNING, "!")
+logging.addLevelName(CUSTOM_LOGGING.SYSINFO, "INFO")
+logging.addLevelName(CUSTOM_LOGGING.SUCCESS, "SUCCESS")
+logging.addLevelName(CUSTOM_LOGGING.ERROR, "ERROR")
+logging.addLevelName(CUSTOM_LOGGING.WARNING, "WARNING")
 logging.addLevelName(CUSTOM_LOGGING.DEBUG, "DEBUG")
-LOGGER = logging.getLogger("scanner")
+LOGGER = logging.getLogger("TookitLogger")
 
 LOGGER_HANDLER = None
-try:
-    from thirdparty.ansistrm.ansistrm import ColorizingStreamHandler
 
-    try:
-        LOGGER_HANDLER = ColorizingStreamHandler(sys.stdout)
-        LOGGER_HANDLER.level_map[logging.getLevelName("*")] = (None, "cyan", False)
-        LOGGER_HANDLER.level_map[logging.getLevelName("+")] = (None, "green", False)
-        LOGGER_HANDLER.level_map[logging.getLevelName("-")] = (None, "red", False)
-        LOGGER_HANDLER.level_map[logging.getLevelName("!")] = (None, "yellow", False)
-        LOGGER_HANDLER.level_map[logging.getLevelName("DEBUG")] = (None, "white", False)
-    except Exception:
-        LOGGER_HANDLER = logging.StreamHandler(sys.stdout)
+from thirdparty.ansistrm.ansistrm import ColorizingStreamHandler
 
-except ImportError:
-    LOGGER_HANDLER = logging.StreamHandler(sys.stdout)
+LOGGER_HANDLER = ColorizingStreamHandler(sys.stdout)
+LOGGER_HANDLER.level_map[logging.getLevelName("INFO")] = (None, "cyan", False)
+LOGGER_HANDLER.level_map[logging.getLevelName("SUCCESS")] = (None, "green", False)
+LOGGER_HANDLER.level_map[logging.getLevelName("ERROR")] = (None, "red", False)
+LOGGER_HANDLER.level_map[logging.getLevelName("WARNING")] = (None, "yellow", False)
+LOGGER_HANDLER.level_map[logging.getLevelName("DEBUG")] = (None, "white", False)
+
 
 FORMATTER = logging.Formatter("\r[%(levelname)s] %(message)s", "%H:%M:%S")
 

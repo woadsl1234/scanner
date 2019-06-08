@@ -27,6 +27,7 @@ def setPaths(rootPath):
 
     paths.ROOT_PATH = rootPath
     # paths
+    paths.LIB_PATH = os.path.join(paths.ROOT_PATH, "lib")
     paths.PLUGIN_PATH = os.path.join(paths.ROOT_PATH, "plugin")
     paths.SETTINGS_PATH = os.path.join(paths.ROOT_PATH, "lib", "core", "settings.py")
     paths.DICS_PATH = os.path.join(paths.ROOT_PATH, "dics")

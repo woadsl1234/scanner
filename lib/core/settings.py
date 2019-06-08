@@ -6,6 +6,8 @@ UNICODE_ENCODING = "utf8"
 # Marker for program piped input
 STDIN_PIPE_DASH = '-'
 
+IS_WIN = 0
+
 # Approximate chunk length (in bytes) used by BigArray objects (only last chunk and cached one are held in memory)
 BIGARRAY_CHUNK_SIZE = 1024 * 1024
 
